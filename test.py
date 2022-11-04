@@ -64,5 +64,6 @@ if __name__=='__main__':
     p1 = input('Enter symbol for p1 ')
     p2 = input('Enter symbol for p2 ')
     game = tic_tak_tok(p1,p2)
+    
     game.play()
 
