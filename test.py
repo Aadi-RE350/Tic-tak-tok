@@ -55,15 +55,23 @@ class tic_tak_tok:
                 self.visited[pos]=pos
                 i+=1
             if i==9: 
+                print('Enter position value in between 0 to 8')
                 break
             self.layout()
         print('GAME OVER')
 
 
 if __name__=='__main__':
-    p1 = input('Enter symbol for p1 ')
-    p2 = input('Enter symbol for p2 ')
-    game = tic_tak_tok(p1,p2)
-    
-    game.play()
+    game_again=1
+    while game_again==1:
+        p1 = input('Enter symbol for p1 ')
+        while True:
+            p2 = input('Enter symbol for p2 ')
+            if p1 != p2:
+                break
+            print('Symbol for p2 should not be equal to p1')
+        game = tic_tak_tok(p1,p2)
+        game.layout()
+        game.play()
+        game_again=int(input('Do you want to play again(yes:1 and no:0):'))
 
